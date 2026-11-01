@@ -1,9 +1,38 @@
+@media (max-width: 108px) {
+  .welcome {
+    margin-right: clamp(20px, 6vw, 10%);
+    margin-left: clamp(20px, 6vw, 10%);
+  }
+
+  .welcome-inner {
+    width: min(100% - 36px, 1350px);
+    grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr);
+    gap: clamp(18px, 3vw, 30px);
+  }
+
+  .welcome h1 {
+    font-size: clamp(38px, 5vw, 54px);
+  }
+
+  .welcome-subtitle {
+    margin-bottom: 28px;
+    font-size: clamp(19px, 2.4vw, 23px);
+  }
+
+  .welcome-art img {
+    width: min(100%, 32vw, 340px);
+  }
+}
+
 @media (max-width: 1080px) {
   .utility-inner,
   .main-nav,
-  .welcome-inner,
-  .popular-products {
-    width: min(100% - 44px, 1350px);
+  .popular-products,
+  .popular-categories,
+  .trusted-inner,
+  .testimonials,
+  .benefits-inner {
+    width: 100%;
   }
 
   .utility-inner {
@@ -18,25 +47,55 @@
     gap: 14px;
   }
 
-  .main-nav {
-    gap: 24px;
-  }
-
-  .main-links {
-    gap: 15px;
-  }
-
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
+
+  .brand-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 18px;
+  }
 }
 
 @media (max-width: 760px) {
+  .utility-bar,
+  .main-nav-wrap {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .main-nav-wrap.is-floating {
+    right: 12px;
+    left: 12px;
+  }
+
+  .main-nav-wrap.is-floating .main-nav {
+    width: 100%;
+    min-height: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .main-nav-wrap.is-floating .main-links {
+    width: 100%;
+    min-width: 0;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
   .utility-inner,
   .main-nav,
   .welcome-inner,
-  .popular-products {
+  .popular-products,
+  .popular-categories,
+  .trusted-inner,
+  .testimonials,
+  .benefits-inner {
     width: min(100% - 36px, 1350px);
   }
 
@@ -116,6 +175,8 @@
 
   .welcome {
     min-height: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .welcome-inner {
@@ -161,7 +222,86 @@
   }
 
   .welcome-art img {
-    width: min(100%, 390px);
+    width: min(100%, 70vw, 320px);
+  }
+
+  .trusted-brands {
+    padding: 34px 0 42px;
+  }
+
+  .trusted-inner h2 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .trusted-inner > p {
+    font-size: 16px;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .brand-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px 14px;
+    margin-top: 28px;
+  }
+
+  .brand-logo {
+    transform: scale(0.82);
+    transform-origin: left center;
+  }
+
+  .testimonials {
+    margin-bottom: 40px;
+    padding: 34px 22px;
+  }
+
+  .testimonials h2 {
+    font-size: 24px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .testimonial-card {
+    min-height: 0;
+  }
+
+  .benefits {
+    padding: 34px 0 42px;
+  }
+
+  .benefits h2 {
+    font-size: 24px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .benefit-item {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .benefit-item > img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .benefit-item h3,
+  .benefit-item p {
+    font-size: 15px;
+  }
+
+  .testimonial-content p,
+  .testimonial-content blockquote {
+    font-size: 14px;
   }
 
   .popular-products {
@@ -210,13 +350,20 @@
   }
 }
 
-@media (min-width: 761px) and (max-width: 920px) {
+@media (min-width: 761px) and (max-width: 1118px) {
   .main-nav {
     min-height: 0;
     flex-wrap: wrap;
     gap: 18px;
     padding-top: 20px;
     padding-bottom: 12px;
+  }
+
+  .main-nav-wrap.is-floating .main-nav {
+    min-height: 0;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .main-links {
@@ -237,7 +384,11 @@
   .utility-inner,
   .main-nav,
   .welcome-inner,
-  .popular-products {
+  .popular-products,
+  .popular-categories,
+  .trusted-inner,
+  .testimonials,
+  .benefits-inner {
     width: min(100% - 28px, 1350px);
   }
 
@@ -259,6 +410,10 @@
     padding: 22px 0 36px;
   }
 
+  .popular-categories {
+    padding: 8px 0 36px;
+  }
+
   .products-heading {
     margin-bottom: 20px;
   }
@@ -276,12 +431,40 @@
     gap: 16px;
   }
 
+  .brand-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 8px;
+  }
+
+  .testimonials {
+    padding: 26px 14px;
+  }
+
+  .benefits h2 {
+    font-size: 21px;
+  }
+
+  .testimonials h2 {
+    font-size: 21px;
+  }
+
+  .testimonial-card {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 12px;
+    padding: 15px 12px;
+  }
+
+  .testimonial-author {
+    white-space: normal;
+  }
+
   .product-card {
     display: block;
   }
 
   .product-image,
-  .mug-image {
+  .mug-image,
+  .product-art {
     width: 100%;
     height: auto;
     min-height: 0;
@@ -311,5 +494,89 @@
 
   .product-price strong {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  .press-mentions {
+    padding: 44px 24px;
+  }
+
+  .press-inner h2 {
+    font-size: 23px;
+  }
+
+  .press-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  .press-item strong {
+    font-size: 18px;
+  }
+
+  .press-item a {
+    font-size: 13px;
+  }
+
+  .footer-main {
+    padding: 42px 24px;
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 22px;
+  }
+
+  .footer-extras {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (max-width: 420px) {
+  .press-mentions {
+    padding: 36px 18px;
+  }
+
+  .press-grid {
+    gap: 20px 12px;
+  }
+
+  .press-item strong,
+  .press-item .press-forbes,
+  .press-item .press-cnn {
+    font-size: 16px;
+  }
+
+  .press-item a {
+    font-size: 12px;
+  }
+
+  .footer-main {
+    padding: 36px 18px;
+  }
+
+  .footer-inner {
+    gap: 28px 14px;
+  }
+
+  .footer-group h2 {
+    font-size: 14px;
+  }
+
+  .footer-group a,
+  .footer-group p {
+    font-size: 12px;
+  }
+
+  .footer-extras {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-socials {
+    gap: 16px;
   }
 }
